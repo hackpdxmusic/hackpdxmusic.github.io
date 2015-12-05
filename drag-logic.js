@@ -11,22 +11,20 @@ var sines = [], triangles = [], squares = [];
 // Populate 2d notes array with nulls
 for (var i = 0; i < numHorizontal; i++) {
   notePositions[i] = [];
-
   for (var j = 0; j < numVertical; j++) {
     notePositions[i][j] = null;
   }
 }
 
+// Populate selection area with given number of each object
 for (var i = 0; i < numSines; i++) {
   var newSine = $('#sequencer-grid').append('<div class="sine note ui-widget-content">sine</div>');
   sines.push(newSine);
 }
-
 for (var i = 0; i < numSquares; i++) {
   var newSquare = $('#sequencer-grid').append('<div class="square note ui-widget-content">square</div>');
   squares.push(newSquare);
 }
-
 for (var i = 0; i < numTriangles; i++) {
   var newTriangle = $('#sequencer-grid').append('<div class="triangle note ui-widget-content">tri</div>');
   triangles.push(newTriangle);
@@ -52,7 +50,7 @@ $(".note").draggable({
   }
 });
 
-
+// Set up notes to snap to sequencer grid
 $("#sequencer-grid").droppable({
     over: function(event, ui) {
         $(".note").draggable({
@@ -64,6 +62,7 @@ $("#sequencer-grid").droppable({
     }
 });
 
+// Set up notes to snap to selection zone area
 $("#selection-zone").droppable({
     over: function(event, ui) {
         $(".note").draggable({
