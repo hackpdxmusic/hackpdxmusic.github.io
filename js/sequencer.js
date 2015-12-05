@@ -35,11 +35,11 @@ Tone.Transport.setInterval(function(time) {
 
   for (var i = 0; i < 8; i++) {
     if (column[i] === "sine") {
-      synthSine.triggerAttackRelease(noteValues[i], "8n", time);
+      synthSine.triggerAttackRelease(noteValues[i], "16n", time);
     } else if (column[i] === "square") {
-      synthSquare.triggerAttackRelease(noteValues[i], "8n", time);
+      synthSquare.triggerAttackRelease(noteValues[i], "16n", time);
     } else if (column[i] === "triangle") {
-      synthTriangle.triggerAttackRelease(noteValues[i], "8n", time);
+      synthTriangle.triggerAttackRelease(noteValues[i], "16n", time);
     }
   }
   stepNumber++;
