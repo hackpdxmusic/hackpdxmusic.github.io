@@ -5,17 +5,19 @@ body {
 .sine {
   background-color: #2BA3D6;
   top: 100px;
-  left: 50px;
+  left: -150px;
 }
 .square {
   background-color: #B32BD6;
   top: 150px;
-  left: 50px;
+  left: -150px;
 }
 .triangle {
   background-color: #07E349;
   top: 200px;
-  left: 50px;
+  left: -150px;
+  /*box-shadow:         2px 2px 1px 1px #000;*/
+
 }
 
 .note {
@@ -26,6 +28,7 @@ body {
   float: left;
   margin: 0;
   cursor: move;
+  transition: box-shadow 0.2s;
 }
 
 .ui-widget-header p, .ui-widget-content p {
@@ -42,7 +45,7 @@ body {
   left: 200px;
   top: 0px;
   position: absolute;
-  z-index: -1;
+  z-index: 0;
 }
 
 #selection-wrap {
@@ -52,6 +55,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: -1;
   /*margin-left: 10px;*/
 }
 
@@ -68,4 +72,15 @@ body {
   width: 50px;
   left: 50px;
   background-color: black;
+}
+
+.ui-draggable-dragging {
+    position: relative;
+   -ms-transform: rotate(-2deg); /* IE 9 */
+   -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
+   transform: rotate(-2deg);
+   box-shadow: 0px 2px 3px 0px rgba(100,100,100,1.0);
+   z-index: 1000;
+   cursor: grabbing;
+
 }
