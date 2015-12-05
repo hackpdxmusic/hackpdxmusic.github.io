@@ -16,6 +16,8 @@ body {
   background-color: #07E349;
   top: 200px;
   left: 50px;
+  /*box-shadow:         2px 2px 1px 1px #000;*/
+
 }
 
 .note {
@@ -26,6 +28,7 @@ body {
   float: left;
   margin: 0;
   cursor: move;
+  transition: all 0.2s;
 }
 
 .ui-widget-header p, .ui-widget-content p {
@@ -68,4 +71,19 @@ body {
   width: 50px;
   left: 50px;
   background-color: black;
+}
+
+.ui-draggable-dragging {
+  /*background-color: white;*/
+  /*-moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;*/
+  /*box-shadow:         2px 2px 1px 1px #000;*/
+  position: relative;
+ -ms-transform: rotate(-2deg); /* IE 9 */
+ -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
+ transform: rotate(-2deg);
+ box-shadow: 0px 2px 3px 0px rgba(100,100,100,1.0);
+ z-index: 1000;
+ cursor: grabbing;
+
 }
