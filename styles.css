@@ -1,11 +1,62 @@
-.sine {
-        color:#2BA3D6; /*blue*/
-      }
-      
-.square {
-          color:#B32BD6; /*purple*/
-        }
-        
-.tri {
-      color:#07E349; /*green*/
-    }
+body {
+  font-family: monospace;
+}
+
+#sine {
+  background-color: #2BA3D6;
+  top: 100px;
+  left: 50px;
+}
+#square {
+  background-color: #B32BD6;
+  top: 150px;
+  left: 50px;
+}
+#triangle {
+  background-color: #07E349;
+  top: 200px;
+  left: 50px;
+}
+
+.note {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  float: left;
+  margin: 0;
+  cursor: move;
+}
+
+.ui-widget-header p, .ui-widget-content p {
+  margin: 0;
+}
+
+#sequencer-grid {
+  background-color: grey;
+  border-width: 0px;
+  margin:0;
+  padding: 0;
+  width: 400px;
+  height: 400px;
+  left: 200px;
+  top: 0px;
+  position: absolute;
+  z-index: -1;
+}
+
+#selection-zone {
+  background-color: orange;
+  width: 200px;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /*margin-left: 10px;*/
+}
+
+#selection-zone h3 {
+  background-color: white;
+  display: inline;
+  padding-left: 10px;
+}
