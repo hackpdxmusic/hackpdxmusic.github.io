@@ -2,17 +2,17 @@ body {
   font-family: monospace;
 }
 
-#sine {
+.sine {
   background-color: #2BA3D6;
   top: 100px;
   left: 50px;
 }
-#square {
+.square {
   background-color: #B32BD6;
   top: 150px;
   left: 50px;
 }
-#triangle {
+.triangle {
   background-color: #07E349;
   top: 200px;
   left: 50px;
