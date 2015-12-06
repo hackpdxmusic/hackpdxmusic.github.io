@@ -8,6 +8,8 @@ var numHorizontal = 8;
 var numVertical = 8;
 var cellSize = 50;
 var sines = [], triangles = [], squares = [];
+var xStartPos = null;
+var yStartPos = null;
 
 // Populate 2d notes array with nulls
 for (var i = 0; i < numHorizontal; i++) {
@@ -36,10 +38,10 @@ for (var i = 0; i < numTriangles; i++) {
 // Only applied when they are within bounds of sequencer box
 $(".note").draggable({
   start: function(event, ui) {
-    var xPos = (ui.position.left / 50);
-    var yPos = (ui.position.top / 50);
-    if ((xPos >= 0) && (yPos >= 0)) {
-      notePositions[xPos][yPos] = null;
+    xStartPos = (ui.position.left / 50);
+    yStartPos = (ui.position.top / 50);
+    if ((xStartPos >= 0) && (yStartPos >= 0)) {
+      notePositions[xStartPos][yStartPos] = null;
     }
   },
   drag: function(event, ui) {
@@ -56,12 +58,36 @@ $(".note").draggable({
       console.log('thingy comin in from the resting');
       ui.helper.removeClass('note-resting');
     }
+    if (ui.position.left < -25 && !(ui.helper.hasClass('note-resting'))) {
+      ui.helper.addClass('note-resting');
+    }
   },
   stop: function(event, ui) {
-    var xPos = (ui.position.left / 50);
-    var yPos = (ui.position.top / 50);
-    if ((xPos >= 0) && (yPos >= 0)) {
-      notePositions[xPos][yPos] = ui.helper[0].classList[0];
+    var xEndPos = (ui.position.left / 50);
+    var yEndPos = (ui.position.top / 50);
+    if (ui.position.left < -25) {
+      switch (ui.helper[0].classList[0]) {
+        case 'sine':
+          console.log(ui.helper[0].classList[0]);
+          ui.position.top = 50;
+          ui.position.left = -150;
+          break;
+        case 'square':
+          console.log(ui.helper[0].classList[0]);
+          ui.position.top = 150;
+          ui.position.left = -150;
+          break;
+        case 'triangle':
+          console.log(ui.helper[0].classList[0]);
+          ui.position.top = 250;
+          ui.position.left = -150;
+          break;
+        default:
+          console.log("FREAKOUT!");
+      }
+    }
+    if ((xEndPos >= 0) && (yEndPos >= 0)) {
+      notePositions[xEndPos][yEndPos] = ui.helper[0].classList[0];
     }
   }
 });
