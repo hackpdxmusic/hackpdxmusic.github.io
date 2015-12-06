@@ -3,12 +3,14 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Music Toy</title>
     <link rel="stylesheet" href="styles.css">
     <script src="js/Tone.js"></script>
 </head>
 
 <body>
+<div id="main">
   <div id="selection-wrap">
     <h3>choose:</h3>
     <div id="selection-zone">
@@ -17,27 +19,27 @@
   </div>
 
   <div id="sequencer-grid">
-    <div class="sine note ui-widget-content">
-      sine
+    <div class="sine note note-resting ui-widget-content">
+      <img src="sine.svg" alt="sine wave"/>
     </div>
-    <div class="square note ui-widget-content">
-      square
+    <div class="square note note-resting ui-widget-content">
+      <img src="square.svg" alt="square wave"/>
     </div>
-    <div class="triangle note ui-widget-content">
-      tri
+    <div class="triangle note note-resting ui-widget-content">
+      <img src="triangle.svg" alt="triangle wave" />
     </div>
   </div>
   <div id="time_bar">
   </div>
-
   <div id="time_square">
   </div>
+
+</div>
 
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   <script src="drag-logic.js"></script>
-    <script src="app.js"></script>
     <script src="js/sequencer.js"></script>
 </body>
 </html>
