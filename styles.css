@@ -93,7 +93,7 @@ body {
    z-index: 1000;
    cursor: grabbing;
 
-<<<<<<< HEAD
+
 }
 #time_bar {
     position: absolute;
@@ -110,9 +110,19 @@ body {
     top: 400px;
     height: 50px;
     width: 50px;
-    background-color: green;
+    background-color: #07E349;
 }
-=======
+
+#time_bar_vertical {
+    position: absolute;
+    left: 150px;
+    top: 0px;
+    height: 400px;
+    width: 50px;
+    background-color: #2BA3D6;
+    opacity: 0.15;
+}
+
 }
 
 #main {
@@ -126,4 +136,3 @@ body {
   display:block;
   margin-top:50px;
 }
->>>>>>> 125ce5c768eacc5f220b2928ed9b2cda12d702a5

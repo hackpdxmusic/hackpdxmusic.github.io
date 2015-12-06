@@ -43,9 +43,11 @@ Tone.Transport.setInterval(function(time) {
   if (pos <= 500) {
   pos += 50;
   $("#time_square").css("left", pos);
+  $("#time_bar_vertical").css("left", pos);
   } else {
   pos = 200;
-  $("#time_square").css("left", 200);
+  $("#time_square").css("left", 200); 
+  $("#time_bar_vertical").css("left", 200);
   }
 }, "8n");
 
