@@ -82,13 +82,24 @@ $(".note").draggable({
           console.log("FREAKOUT!");
       }
     }
+    // if were over sequencer dont let users override existing notes
+    // if (ui.position.left > 0) {
+    //   var xMidPos = parseInt(ui.position.left / 50);
+    //   var yMidPos = parseInt(ui.position.top / 50);
+    //   console.log('xmidPos:' + xMidPos);
+    //   console.log('ymidPos:' + yMidPos);
+    //   //dont let users override existing notes
+    //   if (notePositions[xMidPos][yMidPos] != null) {
+    //     ui.position.left = xStartPos;
+    //     ui.position.top = yStartPos;
+    //   }
+    // }
+
   },
   stop: function(event, ui) {
     var xEndPos = (ui.position.left / 50);
     var yEndPos = (ui.position.top / 50);
-    if (ui.position.left < -25) {
 
-    }
     if ((xEndPos >= 0) && (yEndPos >= 0)) {
       notePositions[xEndPos][yEndPos] = ui.helper[0].classList[0];
     }
@@ -104,6 +115,7 @@ $("#sequencer-grid").droppable({
     },
     out: function(event, ui) {
         $(".note").draggable("option", "grid", false);
+        console.log('out on grid');
     }
 });
 
