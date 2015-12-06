@@ -1,24 +1,22 @@
-// set up synths
-var synthSine = new Tone.SimpleSynth({
-  "oscillator" : {
-    "type" : "sine",
-    "volume": -5
+// helper function to create and play a synth
+function playTone(oscType, pitch) {
+  // balance volume for square oscillator
+  var volume = -5;
+  if (oscType === "square") {
+    volume = -20;
   }
-}).toMaster();
 
-var synthSquare = new Tone.SimpleSynth({
-  "oscillator" : {
-    "type" : "square",
-    "volume": -20
-  }
-}).toMaster();
+  // create synth
+  var synth = new Tone.SimpleSynth({
+    "oscillator" : {
+      "type": oscType,
+      "volume": volume,
+    }
+  }).toMaster();
 
-var synthTriangle = new Tone.SimpleSynth({
-  "oscillator" : {
-    "type" : "triangle",
-    "volume": -5
-  }
-}).toMaster();
+  // play synth
+  synth.triggerAttackRelease(pitch, "8n");
+}
 
 // keep track of steps and notes
 var stepNumber = 0;
@@ -28,18 +26,15 @@ var pos = parseInt($("#time_square").css("left"));
 
 // triggerAttackRelease works when not passing in time
 Tone.Transport.setInterval(function(time) {
-
   for (var yPos = 0; yPos < 8; yPos++) {
-    if (notePositions[stepNumber][yPos] === "sine") {
-      synthSine.triggerAttackRelease(noteValues[yPos], "8n", time);
-    } else if (notePositions[stepNumber][yPos] === "square") {
-      synthSquare.triggerAttackRelease(noteValues[yPos], "8n", time);
-    } else if (notePositions[stepNumber][yPos] === "triangle") {
-      synthTriangle.triggerAttackRelease(noteValues[yPos], "8n", time);
+    if (notePositions[stepNumber][yPos] !== null) {
+      playTone(notePositions[stepNumber][yPos], noteValues[yPos]);
     }
   }
+
   stepNumber++;
   stepNumber = stepNumber % 8;
+
   if (pos <= 500) {
   pos += 50;
   $("#time_square").css("left", pos);
