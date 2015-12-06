@@ -75,13 +75,38 @@ body {
   padding-left: 10px;
 }
 
-#selection-zone {
+/*#selection-zone {
   position: absolute;
   top: 50px;
   height: 300px;
   width: 100px;
   left: 50px;
   background-color: black;
+}*/
+
+#sine-selection-zone {
+  position: absolute;
+  top: 50px;
+  height: 100px;
+  width: 100px;
+  left: 50px;
+  /*background-color: black;*/
+}
+#square-selection-zone {
+  position: absolute;
+  top: 150px;
+  height: 100px;
+  width: 100px;
+  left: 50px;
+  /*background-color: black;*/
+}
+#triangle-selection-zone {
+  position: absolute;
+  top: 250px;
+  height: 100px;
+  width: 100px;
+  left: 50px;
+  /*background-color: black;*/
 }
 
 .ui-draggable-dragging {

@@ -54,21 +54,18 @@ $(".note").draggable({
     if (ui.position.top < 0) {
       ui.position.top = 0;
     }
+    // coming in from left and was resting when drag began
     if ((ui.position.left > -25) && (ui.helper.hasClass('note-resting'))) {
-      console.log('thingy comin in from the resting');
-      ui.helper.removeClass('note-resting');
+      ui.helper.removeClass('note-resting', 0.2, 'swing');
     }
-    if (ui.position.left < -25 && !(ui.helper.hasClass('note-resting'))) {
-      ui.helper.addClass('note-resting');
+    // somewhere over left and was not resting
+    if (ui.position.left < -25 && (!ui.helper.hasClass('note-resting'))) {
+      ui.helper.addClass('note-resting', 0.2, 'swing');
     }
-  },
-  stop: function(event, ui) {
-    var xEndPos = (ui.position.left / 50);
-    var yEndPos = (ui.position.top / 50);
-    if (ui.position.left < -25) {
+    // Don't let user put tones back anywhere except original resting place
+    if (ui.position.left < -25 && ui.helper.hasClass('note-resting')) {
       switch (ui.helper[0].classList[0]) {
         case 'sine':
-          console.log(ui.helper[0].classList[0]);
           ui.position.top = 50;
           ui.position.left = -150;
           break;
@@ -78,13 +75,19 @@ $(".note").draggable({
           ui.position.left = -150;
           break;
         case 'triangle':
-          console.log(ui.helper[0].classList[0]);
           ui.position.top = 250;
           ui.position.left = -150;
           break;
         default:
           console.log("FREAKOUT!");
       }
+    }
+  },
+  stop: function(event, ui) {
+    var xEndPos = (ui.position.left / 50);
+    var yEndPos = (ui.position.top / 50);
+    if (ui.position.left < -25) {
+
     }
     if ((xEndPos >= 0) && (yEndPos >= 0)) {
       notePositions[xEndPos][yEndPos] = ui.helper[0].classList[0];
@@ -105,10 +108,33 @@ $("#sequencer-grid").droppable({
 });
 
 // Set up notes to snap to selection zone area
-$("#selection-zone").droppable({
+$("#sine-selection-zone").droppable({
+    // greedy: true,
     over: function(event, ui) {
-        $(".note").draggable({
-            grid: [50, 50]
+        $(".sine").draggable({
+            grid: [100, 100]
+        });
+    },
+    out: function(event, ui) {
+        $(".note").draggable("option", "grid", false);
+    }
+});
+$("#square-selection-zone").droppable({
+    // greedy: true,
+    over: function(event, ui) {
+        $(".square").draggable({
+            grid: [100, 100]
+        });
+    },
+    out: function(event, ui) {
+        $(".note").draggable("option", "grid", false);
+    }
+});
+$("#triangle-selection-zone").droppable({
+    // greedy: true,
+    over: function(event, ui) {
+        $(".triangle").draggable({
+            grid: [100, 100]
         });
     },
     out: function(event, ui) {
