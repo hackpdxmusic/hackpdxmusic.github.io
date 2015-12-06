@@ -28,7 +28,7 @@ body {
   float: left;
   margin: 0;
   cursor: move;
-  transition: box-shadow 0.2s;
+  transition: box-shadow transform 0.2s;
 }
 
 .ui-widget-header p, .ui-widget-content p {

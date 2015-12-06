@@ -6,6 +6,7 @@ var numTriangles = 5;
 var notePositions = [];
 var numHorizontal = 8;
 var numVertical = 8;
+var cellSize = 50;
 var sines = [], triangles = [], squares = [];
 
 // Populate 2d notes array with nulls
@@ -39,6 +40,17 @@ $(".note").draggable({
     var yPos = (ui.position.top / 50);
     if ((xPos >= 0) && (yPos >= 0)) {
       notePositions[xPos][yPos] = null;
+    }
+  },
+  drag: function(event, ui) {
+    if (ui.position.left > 350) {
+      ui.position.left = 350;
+    }
+    if (ui.position.top > 350) {
+      ui.position.top = 350;
+    }
+    if (ui.position.top < 0) {
+      ui.position.top = 0;
     }
   },
   stop: function(event, ui) {
