@@ -8,20 +8,28 @@
 
 //start by drawing one square. time starts on load
 
-
-$( document ).ready(function() {
-
-        var pos = parseInt($("#time_square").css("left"));
-
-        var t = setInterval(function() {
-
-            pos += 50;
-            console.log(pos);
-            $("#time_square").css("left", pos);
-        }, 1000);
-
-
-
-
-
-})
+// console.dir(Tone.Transport);
+//
+// $(document).ready(function() {
+//
+//         function metronome() {
+//             if (pos <= 500) {
+//             pos += 50;
+//             $("#time_square").css("left", pos);
+//         } else {
+//             pos = 200;
+//             $("#time_square").css("left", 200);
+//         }
+//         }
+//         var pos = parseInt($("#time_square").css("left"));
+//
+//         var t = setInterval(metronome, 250);
+//
+//
+//
+//
+//
+//
+//
+//
+// })
