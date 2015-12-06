@@ -136,6 +136,13 @@ body {
     opacity: 0.15;
 }
 
+.grid_text {
+    position: absolute;
+        left: 550px;
+        top: 150px;
+        transform: rotate(90deg);
+        font-size: 28px;
+
 }
 
 #main {
@@ -148,4 +155,12 @@ body {
   /*transform: (translate());*/
   display:block;
   margin-top:50px;
+}
+
+#title {
+    /*position: absolute;*/
+    top: 0px;
+    left: 10px; 
+    text-align: center;
+    font-size: 36px;
 }
