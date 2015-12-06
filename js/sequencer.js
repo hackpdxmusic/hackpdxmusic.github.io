@@ -28,18 +28,16 @@ var stepNumber = 0;
 var noteValues = ["C5", "B4", "A4", "G4", "F4", "E4", "D4", "C4"];
 
 // repeated callback
-Tone.Transport.setInterval(function(time) {
-  // get the notes at the step
-  // get this from Ashlin's dumb jquery
-  var column;
 
-  for (var i = 0; i < 8; i++) {
-    if (column[i] === "sine") {
-      synthSine.triggerAttackRelease(noteValues[i], "16n", time);
-    } else if (column[i] === "square") {
-      synthSquare.triggerAttackRelease(noteValues[i], "16n", time);
-    } else if (column[i] === "triangle") {
-      synthTriangle.triggerAttackRelease(noteValues[i], "16n", time);
+
+Tone.Transport.setInterval(function(time) {
+  for (var yPos = 0; yPos < 8; yPos++) {
+    if (notePositions[stepNumber][yPos] === "sine") {
+      synthSine.triggerAttackRelease(noteValues[yPos], "16n", time);
+    } else if (notePositions[stepNumber][yPos] === "square") {
+      synthSquare.triggerAttackRelease(noteValues[yPos], "16n", time);
+    } else if (notePositions[stepNumber][yPos] === "triangle") {
+      synthTriangle.triggerAttackRelease(noteValues[yPos], "16n", time);
     }
   }
   stepNumber++;
