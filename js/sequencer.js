@@ -16,6 +16,10 @@ function playTone(oscType, pitch) {
 
   // play synth
   synth.triggerAttackRelease(pitch, "8n");
+  setTimeout(function() {
+    synth.dispose();
+  }, 800);
+  // synth.dispose();
 }
 
 // keep track of steps and notes
@@ -41,7 +45,7 @@ Tone.Transport.setInterval(function(time) {
   $("#time_bar_vertical").css("left", pos);
   } else {
   pos = 200;
-  $("#time_square").css("left", 200); 
+  $("#time_square").css("left", 200);
   $("#time_bar_vertical").css("left", 200);
   }
 }, "8n");
