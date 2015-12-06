@@ -3,21 +3,19 @@ body {
 }
 
 .sine {
-  background-color: #2BA3D6;
+  /*background-color: #2BA3D6;*/
   top: 100px;
   left: -150px;
 }
 .square {
-  background-color: #B32BD6;
+  /*background-color: #B32BD6;*/
   top: 150px;
   left: -150px;
 }
 .triangle {
-  background-color: #07E349;
+  /*background-color: #07E349;*/
   top: 200px;
   left: -150px;
-  /*box-shadow:         2px 2px 1px 1px #000;*/
-
 }
 
 .note {
@@ -29,6 +27,11 @@ body {
   margin: 0;
   cursor: move;
   transition: box-shadow transform 0.2s;
+}
+
+.note-resting {
+  width: 100px;
+  height: 100px;
 }
 
 .ui-widget-header p, .ui-widget-content p {

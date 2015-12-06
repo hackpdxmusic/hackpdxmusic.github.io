@@ -19,15 +19,15 @@ for (var i = 0; i < numHorizontal; i++) {
 
 // Populate selection area with given number of each object
 for (var i = 0; i < numSines; i++) {
-  var newSine = $('#sequencer-grid').append('<div class="sine note ui-widget-content">sine</div>');
+  var newSine = $('#sequencer-grid').append('<div class="sine note ui-widget-content"><img src="sine.svg" alt="sine wave"/></div>');
   sines.push(newSine);
 }
 for (var i = 0; i < numSquares; i++) {
-  var newSquare = $('#sequencer-grid').append('<div class="square note ui-widget-content">square</div>');
+  var newSquare = $('#sequencer-grid').append('<div class="square note ui-widget-content"><img src="square.svg" alt="square wave"/></div>');
   squares.push(newSquare);
 }
 for (var i = 0; i < numTriangles; i++) {
-  var newTriangle = $('#sequencer-grid').append('<div class="triangle note ui-widget-content">tri</div>');
+  var newTriangle = $('#sequencer-grid').append('<div class="triangle note ui-widget-content"><img src="triangle.svg" alt="triangle wave" /></div>');
   triangles.push(newTriangle);
 }
 
