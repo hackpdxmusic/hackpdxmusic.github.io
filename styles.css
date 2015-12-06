@@ -84,3 +84,20 @@ body {
    cursor: grabbing;
 
 }
+#time_bar {
+    position: absolute;
+    left: 200px;
+    top: 400px;
+    height: 50px;
+    width: 400px;
+    background-color: grey;
+}
+
+#time_square {
+    position: absolute; 
+    left: 200px;
+    top: 400px;
+    height: 50px;
+    width: 50px;
+    background-color: green;
+}
