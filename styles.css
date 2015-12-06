@@ -46,7 +46,7 @@ body {
 }
 
 #sequencer-grid {
-  background-color: #ddd;
+  background-color: #eee;
   border-width: 0px;
   margin:0;
   padding: 0;
@@ -81,7 +81,7 @@ body {
   height: 300px;
   width: 100px;
   left: 50px;
-  background-color: black;
+  background-color: #fff;
 }
 
 .ui-draggable-dragging {
@@ -93,4 +93,16 @@ body {
    z-index: 1000;
    cursor: grabbing;
 
+}
+
+#main {
+  position:relative;
+  /*margin: 0 auto;*/
+  /*top: 50%;*/
+  left: 50%;
+  margin-left: -300px;
+  /*margin-top: -200px;*/
+  /*transform: (translate());*/
+  display:block;
+  margin-top:50px;
 }
