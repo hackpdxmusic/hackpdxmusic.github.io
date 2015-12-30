@@ -138,29 +138,40 @@ body {
 
 .grid_text {
     position: absolute;
-        left: 550px;
-        top: 150px;
-        transform: rotate(90deg);
-        font-size: 28px;
+    left: 550px;
+    top: 150px;
+    transform: rotate(90deg);
+    font-size: 28px;
 
 }
 
 #main {
-  position:relative;
-  /*margin: 0 auto;*/
-  /*top: 50%;*/
-  left: 50%;
-  margin-left: -300px;
-  /*margin-top: -200px;*/
-  /*transform: (translate());*/
-  display:block;
-  margin-top:50px;
+    position:relative;
+    left: 50%;
+    margin-left: -300px;
+    display:block;
+    margin-top:50px;
 }
 
 #title {
     /*position: absolute;*/
     top: 0px;
-    left: 10px; 
+    left: 10px;
     text-align: center;
     font-size: 36px;
+}
+
+#instructions {
+  position: absolute;
+  text-align: center;
+  top: 480px;
+  width: 520px;
+  left: 40px;
+  padding: 20px;
+  background: #eee;
+  color: grey;
+}
+
+#instructions i {
+  margin: 2px;
 }
